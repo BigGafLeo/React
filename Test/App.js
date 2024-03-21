@@ -1,25 +1,30 @@
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: "A",
-    };
-  }
+  state = {
+    text: "",
+  };
 
-  handleClick() {
-    this.setState((prevState) => ({
-      text: this.state.text + "B",
-    }));
-  }
+  handleClick = () => {
+    const number = Math.floor(Math.random() * 10);
+    this.setState({
+      text: this.state.text + number,
+    });
+  };
 
   render() {
     return (
       <>
-        <button onClick={this.handleClick.bind(this)}>Dodaj "A"</button>
-        <h1>{this.state.text}</h1>
+        <button onClick={this.handleClick}>{this.props.btnTitle}</button>
+        <TextComponent text={this.state.text} />
       </>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const TextComponent = (props) => {
+  return <h1>{props.text}</h1>;
+};
+
+ReactDOM.render(
+  <App btnTitle="Dodaj cyfre" />,
+  document.getElementById("root")
+);
