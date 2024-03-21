@@ -8,7 +8,7 @@ class App extends React.Component {
 
   handleClick() {
     this.setState((prevState) => ({
-      text: this.state.text + "A",
+      text: this.state.text + "B",
     }));
   }
 
