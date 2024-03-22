@@ -1,30 +1,42 @@
-class App extends React.Component {
+class Counter extends React.Component {
   state = {
-    text: "",
+    clickCount: 0,
+    result: 0,
   };
 
-  handleClick = () => {
-    const number = Math.floor(Math.random() * 10);
-    this.setState({
-      text: this.state.text + number,
-    });
-  };
+  handleMathClick(type, number) {
+    if (type !== "reset") {
+      this.setState((prevState) => ({
+        clickCount: prevState.clickCount + 1,
+        result:
+          type === "sub"
+            ? prevState.result - number
+            : prevState.result + number,
+      }));
+    } else {
+      this.setState((prevState) => ({
+        clickCount: 0,
+        result: 0,
+      }));
+    }
+  }
 
   render() {
     return (
       <>
-        <button onClick={this.handleClick}>{this.props.btnTitle}</button>
-        <TextComponent text={this.state.text} />
+        <button onClick={this.handleMathClick.bind(this, "sub", 10)}>
+          -10
+        </button>
+        <button onClick={this.handleMathClick.bind(this, "add", 1)}>+1</button>
+        <button onClick={() => this.handleMathClick("sub", 1)}>-1</button>
+        <button onClick={this.handleMathClick.bind(this, "reset")}>
+          Reset wyniku
+        </button>
+        <h1>Liczba kliknięć: {this.state.clickCount}</h1>
+        <h1>Wynik: {this.state.result}</h1>
       </>
     );
   }
 }
 
-const TextComponent = (props) => {
-  return <h1>{props.text}</h1>;
-};
-
-ReactDOM.render(
-  <App btnTitle="Dodaj cyfre" />,
-  document.getElementById("root")
-);
+ReactDOM.render(<Counter />, document.getElementById("root"));
