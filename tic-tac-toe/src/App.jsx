@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import React from "react";
-import reactCoreConcepts from "./assets/react-core-concepts.png";
-import { CORE_CONCEPTS } from "./data";
-import Header from "./components/Header";
-import CoreConcept from "./components/CoreConcept";
-import TabButton from "./components/TabButton";
-import { EXAMPLES } from "./data";
+import { CORE_CONCEPTS } from './data.js';
+import Header from './components/Header/Header.jsx';
+import CoreConcept from './components/CoreConcept.jsx';
+import TabButton from './components/TabButton.jsx';
+import { EXAMPLES } from './data.js';
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
+    // selectedButton => 'components', 'jsx', 'props', 'state'
     setSelectedTopic(selectedButton);
+    // console.log(selectedTopic);
   }
 
-  let tabContent = <p>Please select topic</p>;
+  console.log('APP COMPONENT EXECUTING');
+
+  let tabContent = <p>Please select a topic.</p>;
 
   if (selectedTopic) {
     tabContent = (
@@ -34,10 +36,10 @@ function App() {
       <Header />
       <main>
         <section id="core-concepts">
-          <h2>Core concepts</h2>
+          <h2>Core Concepts</h2>
           <ul>
-            {CORE_CONCEPTS.map((concept, index) => (
-              <CoreConcept key={index} {...concept} />
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
             ))}
           </ul>
         </section>
@@ -45,26 +47,26 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <TabButton
-              isSelected={selectedTopic === "components"}
-              onClick={() => handleSelect("components")}
+              isSelected={selectedTopic === 'components'}
+              onSelect={() => handleSelect('components')}
             >
               Components
             </TabButton>
             <TabButton
-              isSelected={selectedTopic === "jsx"}
-              onClick={() => handleSelect("jsx")}
+              isSelected={selectedTopic === 'jsx'}
+              onSelect={() => handleSelect('jsx')}
             >
               JSX
             </TabButton>
             <TabButton
-              isSelected={selectedTopic === "props"}
-              onClick={() => handleSelect("props")}
+              isSelected={selectedTopic === 'props'}
+              onSelect={() => handleSelect('props')}
             >
               Props
             </TabButton>
             <TabButton
-              isSelected={selectedTopic === "state"}
-              onClick={() => handleSelect("state")}
+              isSelected={selectedTopic === 'state'}
+              onSelect={() => handleSelect('state')}
             >
               State
             </TabButton>
