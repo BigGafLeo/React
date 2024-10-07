@@ -23,7 +23,7 @@ export default function CounterHistory({ history }) {
 
   return (
     <ol>
-      {history.map((count, index) => (
+      {history.map((count) => (
         <HistoryItem key={count.id} count={count.value} />
       ))}
     </ol>
