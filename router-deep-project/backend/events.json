@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"new event","image":"https://www.sheba.pl/sites/g/files/fnmzdf5451/files/2023-03/co-moze-jesc-kot_-produkty-ktore-smialo-mozesz-wcielic-do-jego-diety_optimized_1597650834564_0.jpeg","date":"2024-11-28","description":"asd","id":"89befbbb-1bf0-4880-a975-fd2ffefe0e9a"},{"title":"aaaa","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3K3WrExzivwTu2NSw1kZ6i1Dfd3jzjpuVg_Q9G4TX6KCZI6EH9JAolA5qmHbiw0ohQsqTXARIV6R_cwu3SFKPlv83hQPjl6vJmtj17Q","date":"2024-12-05","description":"asdasdas","id":"ad4f221c-5d47-46d2-9d3b-a831f9f7051c"},{"title":"trolo","image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSC4DtHTGprsp7K8u0ZlfSDmIDplvQYH5vniT0I3rpcl6wqBh8b","date":"2024-11-23","description":"aaa","id":"61f798d5-5a46-4911-9d9f-c6ec6d4e66a0"},{"title":"Ktoka","image":"https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp","date":"2024-11-08","description":"asdasdsa","id":"3e6f5cc2-ec37-4282-93e6-5d0362707ee1"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
